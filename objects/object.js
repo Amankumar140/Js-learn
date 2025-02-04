@@ -87,3 +87,4 @@ const course={
 // 
 const {courseInstructor}=course  // it is use for the easy... called object destructure
 console.log(courseInstructor) 
+
