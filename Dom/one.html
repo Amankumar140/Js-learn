@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom learning</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head >
+<body class="bg-black">
+    <div >
+        <h1 class="heading" id="title">Dom learning on chai or code</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci qui tenetur consequatur optio delectus dolorum magnam recusandae aspernatur saepe explicabo, tempora perspiciatis id minus molestias rem vero eos ipsum laborum.</p>
+    </div>
+     
+</body>
+<script>
+    const title=document.getElementById("title");
+//console.log(title.id);
+// title.innerHTML=" i'm Akhil..."//  => also include inner tags..
+// title.innerText=" Chai or code" // => only visible content select
+// title.textContent="Chai or code"// => select all visible or non visible content...
+
+const heading=document.getElementsByClassName("heading");
+const h1=document.querySelector('h1') // selects by all 
+
+</script>
+</html>

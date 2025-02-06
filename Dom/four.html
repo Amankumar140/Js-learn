@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | Chai or Code...</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+    // it create problem b/c every time it is traverse total tree 
+
+    // optimal way
+
+    function addOptLang(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptLang("java");
+
+
+    //Edit ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // replace third lang with other lang
+    const newli=document.querySelector("li:nth-child(3)")
+    //newli.innerHTML="hello"; not optimised
+    // optimised code.....
+    const thirdLang= document.createElement('li');
+    thirdLang.textContent="mojo";
+    newli.replaceWith(thirdLang);
+
+    // edit
+    const firstLang= document.querySelector('li:first-child');
+    firstLang.outerHTML='<li>Script</li>';
+
+
+    // remove last language
+    const lastLang=document.querySelector('li:last-child');
+    lastLang.remove();
+
+
+
+
+
+
+</script>
+</html>

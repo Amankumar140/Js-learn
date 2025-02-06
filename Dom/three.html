@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dom | chai or code</title>
+    <style>
+        body{
+            background-color: black;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+     
+</body>
+<script>
+     // insert div element
+     const div=document.createElement('div')
+     console.log(div);
+     div.className="main";
+     div.id="random";
+     div.setAttribute("title","generated title")
+     div.style.backgroundColor="gray";
+     div.style.color="white";
+     // div.innerText="Chai aur Code"; // here both innerText or createTextNode both used and their is controversy on it..
+     const addtext=document.createTextNode("chai or code");
+     div.appendChild(addtext);
+     document.body.appendChild(div);
+
+</script>
+</html>
+</body>
+</html>
