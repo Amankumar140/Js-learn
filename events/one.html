@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>htnml Events </title>
+    </head>
+    <body style="background-color: #414141; color: aliceblue;">
+        <h2>Amazing image</h2>
+        <div>
+            <ul id="images">
+                <li><img width="200px" id="photoshop"
+                        src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt="photoshop"></li>
+                <li><img width="200px" id="japan"
+                        src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><img width="200px" id="river"
+                        src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><img width="200px" id="owl"
+                        src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><img width="200px" id="prayer"
+                        src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><a style="color: aliceblue;" href="https://google.com"
+                        id="google">Google</a></li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        // events evoke at activity
+        // don't put event in inline html
+        // always used eventListener
+         // attachEvent()
+        // jQuery - on
+
+        // to learn type, timestamp, defaultPrevented, 
+        //target , toElement ,srcElement, currentTarget,
+        // clientX,clientY,screenX, screenY
+        // altKey,ctrlKey,shiftKey, keyCode
+        
+        // document.getElementById('owl').addEventListener('click',function(e){
+        //     console.log(e)
+        // },false) // default false 
+
+       // event propagation true, false.... 
+       // for event capturing... true top->bottom
+       // for event bubbling .... false(default)...bottom->top event works
+
+    //    document.getElementById('images').addEventListener('click',function(e){
+    //         //console.log("you clicked in ul")
+    //     },false)
+
+        // document.getElementById('owl').addEventListener('click',function(e){
+        //     //console.log('you clicked on owl' )
+        //     e.stopPropagation(); // not goes upper on ul list
+        // },false)
+        // if use false 
+        // you clicked on owl
+         //you clicked in ul
+         // on the other hand if true the top->bottom occurs...
+         document.getElementById('google').addEventListener('click',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            //console.log('google click' );
+             // not goes upper on ul list
+        },false)
+
+
+        // work some
+        // onclick images delete
+
+        const images=document.querySelector('#images').addEventListener('click',function(e){
+            e.preventDefault();
+            //console.log(e.target)// target..
+            //console.log(e.target.parentNode)// target..
+            if(e.target.tagName==='IMG'){
+            let removeIt=e.target.parentNode;
+           removeIt.remove();
+            }
+            // also second method
+           // removeIt.parentNode.removeChild(removeIt);
+
+        },false)
+</script>
+</html>
